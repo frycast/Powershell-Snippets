@@ -275,7 +275,7 @@ $raw[0]
 $rawCSV = Get-Content C:\Test\testCSV.csv
 $objData = $rawCSV | ConvertFrom-Csv
 
-# Note that Write-Host is considered harmful. Use Write-Verbose instead.
+# Note that Write-Host is considered harmful. (Use Write-Verbose instead?) use Write-Output instead.
 Write-Host "Hello"
 $hostInfo = Get-Host
 Write-Host $hostInfo.Version
@@ -304,4 +304,7 @@ $studentList.Student | ForEach-Object {
     Copy-Item -Path $path\Feedback-template.docx -Destination ($path+($_+".docx").Replace(" ","-"))
 }
 
+# Define an array and loop over it
+$a = @("a","b","c")
+$a | ForEach-Object {Write-Output $_}
 
